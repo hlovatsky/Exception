@@ -6,10 +6,12 @@ import org.apache.logging.log4j.Logger;
 public class AutoCloseableClass implements AutoCloseable {
     private static final Logger LOGGER = LogManager.getLogger(AutoCloseableClass.class);
 
-    private String name;
-
     @Override
-    public void close() throws CustomException {
+    public void close() {
         LOGGER.info("Resource has been closed");
+    }
+
+    public void writeLog() {
+        LOGGER.info("Log for AutoCloseableClass");
     }
 }
